@@ -9,7 +9,7 @@
     :root {
       --bg1: #fff7fb;
       --bg2: #f3ecff;
-      --card: rgba(255, 255, 255, 0.72);
+      --card: rgba(255, 255, 255, 0.78);
       --text: #6b5876;
       --pink: #ffb7d5;
       --pink-dark: #ff8fbe;
@@ -31,10 +31,12 @@
       font-family: "Trebuchet MS", "Verdana", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 15% 20%, #ffe2f0 0 120px, transparent 121px),
-        radial-gradient(circle at 85% 15%, #dff4ff 0 110px, transparent 111px),
-        radial-gradient(circle at 80% 80%, #f6ddff 0 140px, transparent 141px),
+        linear-gradient(rgba(255, 247, 251, 0.74), rgba(243, 236, 255, 0.74)),
+        url("./images/bg-pattern.png"),
         linear-gradient(180deg, var(--bg1), var(--bg2));
+      background-size: cover, 260px, cover;
+      background-repeat: no-repeat, repeat, no-repeat;
+      background-position: center, top left, center;
       display: grid;
       place-items: center;
       padding: 24px;
@@ -45,7 +47,7 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.6;
+      opacity: 0.45;
       background-image:
         radial-gradient(circle, rgba(255,255,255,0.9) 0 2px, transparent 3px),
         radial-gradient(circle, rgba(255,255,255,0.75) 0 1.5px, transparent 2.5px),
@@ -78,15 +80,18 @@
 
     .sticker {
       position: absolute;
-      font-size: 1.6rem;
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
       filter: drop-shadow(0 3px 0 rgba(255,255,255,0.65));
       animation: floaty 3.5s ease-in-out infinite;
+      pointer-events: none;
     }
 
-    .sticker.s1 { top: -14px; left: 14px; }
-    .sticker.s2 { top: -12px; right: 16px; animation-delay: .6s; }
-    .sticker.s3 { bottom: -10px; left: 20px; animation-delay: 1.2s; }
-    .sticker.s4 { bottom: -12px; right: 20px; animation-delay: .9s; }
+    .sticker.s1 { top: -18px; left: 10px; }
+    .sticker.s2 { top: -16px; right: 12px; animation-delay: .6s; }
+    .sticker.s3 { bottom: -14px; left: 16px; animation-delay: 1.2s; }
+    .sticker.s4 { bottom: -16px; right: 16px; animation-delay: .9s; }
 
     @keyframes floaty {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -239,6 +244,11 @@
       .link-btn {
         padding: 13px 14px;
       }
+
+      .sticker {
+        width: 50px;
+        height: 50px;
+      }
     }
   </style>
 </head>
@@ -246,17 +256,17 @@
   <div class="sparkles"></div>
 
   <main class="site-card">
-    <div class="sticker s1">🎀</div>
-    <div class="sticker s2">⭐</div>
-    <div class="sticker s3">☁️</div>
-    <div class="sticker s4">💖</div>
+    <img class="sticker s1" src="./images/sticker-bow.png" alt="">
+    <img class="sticker s2" src="./images/star-icon.png" alt="">
+    <img class="sticker s3" src="./images/star-icon.png" alt="">
+    <img class="sticker s4" src="./images/sticker-bow.png" alt="">
 
     <div class="top-badge">welcome to my cute corner ♡</div>
 
     <div class="avatar-wrap">
       <img
         class="avatar"
-        src="https://placehold.co/300x300/png"
+        src="./images/avatar.png"
         alt="Profile picture"
       />
     </div>
@@ -295,13 +305,13 @@
     </section>
 
     <div class="gif-row">
-      <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif" alt="Cute gif 1">
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWQ1aWVteW9jZzV0ZjJxN3A2dXBvOW9tM2RoNDJjNnV4cnY0cnB2NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Cute gif 2">
-      <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cute gif 3">
+      <img src="./images/bunny-mascot.png" alt="Cute mascot">
+      <img src="./images/star-icon.png" alt="Star icon">
+      <img src="./images/sticker-bow.png" alt="Bow sticker">
     </div>
 
     <div class="footer">made with love, ribbon.css, and sparkles ♡</div>
-    <div class="credit">replace the image, gifs, and links with your own favorites</div>
+    <div class="credit">replace the links and text with your own favorites</div>
   </main>
 </body>
 </html>
