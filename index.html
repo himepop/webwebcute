@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kawaii Pastel Links</title>
+
+  <style>
+    :root {
+      --bg1: #fff7fb;
+      --bg2: #f3ecff;
+      --card: rgba(255, 255, 255, 0.72);
+      --text: #6b5876;
+      --pink: #ffb7d5;
+      --pink-dark: #ff8fbe;
+      --lavender: #d9c7ff;
+      --blue: #bfe8ff;
+      --yellow: #fff1b8;
+      --border: #ffd3e6;
+      --shadow: rgba(214, 153, 190, 0.22);
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Trebuchet MS", "Verdana", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, #ffe2f0 0 120px, transparent 121px),
+        radial-gradient(circle at 85% 15%, #dff4ff 0 110px, transparent 111px),
+        radial-gradient(circle at 80% 80%, #f6ddff 0 140px, transparent 141px),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      overflow-x: hidden;
+    }
+
+    .sparkles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.6;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(255,255,255,0.75) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle, rgba(255,255,255,0.85) 0 1.8px, transparent 2.8px);
+      background-size: 180px 180px, 240px 240px, 320px 320px;
+      background-position: 0 0, 50px 70px, 120px 30px;
+      animation: twinkle 7s linear infinite;
+    }
+
+    @keyframes twinkle {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .site-card {
+      width: 100%;
+      max-width: 430px;
+      position: relative;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border: 3px solid var(--border);
+      border-radius: 28px;
+      padding: 26px 22px 20px;
+      box-shadow:
+        0 14px 35px var(--shadow),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+      text-align: center;
+    }
+
+    .sticker {
+      position: absolute;
+      font-size: 1.6rem;
+      filter: drop-shadow(0 3px 0 rgba(255,255,255,0.65));
+      animation: floaty 3.5s ease-in-out infinite;
+    }
+
+    .sticker.s1 { top: -14px; left: 14px; }
+    .sticker.s2 { top: -12px; right: 16px; animation-delay: .6s; }
+    .sticker.s3 { bottom: -10px; left: 20px; animation-delay: 1.2s; }
+    .sticker.s4 { bottom: -12px; right: 20px; animation-delay: .9s; }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(4deg); }
+    }
+
+    .top-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #fff, #ffe8f3);
+      border: 2px solid #ffd4e8;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 0 #f4c7db;
+    }
+
+    .avatar-wrap {
+      width: 116px;
+      height: 116px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, var(--pink), var(--lavender), var(--blue));
+      box-shadow: 0 8px 20px rgba(255, 183, 213, 0.35);
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #fff;
+      border: 4px solid rgba(255,255,255,0.85);
+    }
+
+    h1 {
+      margin: 4px 0 6px;
+      font-size: 1.75rem;
+      line-height: 1.1;
+    }
+
+    .tagline {
+      margin: 0 auto 18px;
+      max-width: 290px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .mini-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.9);
+      border: 2px solid #f4d7e6;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      box-shadow: 0 4px 0 #f3d4e3;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #6a4d67;
+      font-weight: 800;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 2px solid rgba(255,255,255,0.85);
+      box-shadow: 0 6px 0 rgba(230, 197, 215, 0.95);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.45), transparent 45%, rgba(255,255,255,0.2));
+      pointer-events: none;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 9px 0 rgba(230, 197, 215, 0.95);
+      filter: brightness(1.02);
+    }
+
+    .pink { background: linear-gradient(180deg, #ffd9ea, #ffc3de); }
+    .lav  { background: linear-gradient(180deg, #eadfff, #dac9ff); }
+    .blue { background: linear-gradient(180deg, #ddf4ff, #c7ebff); }
+    .cream{ background: linear-gradient(180deg, #fff8dd, #ffefbf); }
+
+    .gif-row {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .gif-row img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      image-rendering: auto;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.55);
+      padding: 4px;
+      border: 2px solid #f7d8e8;
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .credit {
+      margin-top: 6px;
+      font-size: 0.72rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 480px) {
+      .site-card {
+        padding: 22px 16px 18px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .link-btn {
+        padding: 13px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sparkles"></div>
+
+  <main class="site-card">
+    <div class="sticker s1">🎀</div>
+    <div class="sticker s2">⭐</div>
+    <div class="sticker s3">☁️</div>
+    <div class="sticker s4">💖</div>
+
+    <div class="top-badge">welcome to my cute corner ♡</div>
+
+    <div class="avatar-wrap">
+      <img
+        class="avatar"
+        src="https://placehold.co/300x300/png"
+        alt="Profile picture"
+      />
+    </div>
+
+    <h1>peachy angel</h1>
+    <p class="tagline">
+      artist, dreamer, pastel collector, and tiny internet fairy ✨
+    </p>
+
+    <div class="mini-row">
+      <div class="pill">૮ ˶ᵔ ᵕ ᵔ˶ ა</div>
+      <div class="pill">kawaii mode: on</div>
+      <div class="pill">pink cloud club</div>
+    </div>
+
+    <section class="links">
+      <a class="link-btn pink" href="https://instagram.com" target="_blank">
+        <span>🎀</span><span>Instagram</span>
+      </a>
+
+      <a class="link-btn lav" href="https://tiktok.com" target="_blank">
+        <span>🫧</span><span>TikTok</span>
+      </a>
+
+      <a class="link-btn blue" href="https://youtube.com" target="_blank">
+        <span>☁️</span><span>YouTube</span>
+      </a>
+
+      <a class="link-btn cream" href="https://ko-fi.com" target="_blank">
+        <span>🧁</span><span>Support Me</span>
+      </a>
+
+      <a class="link-btn pink" href="https://example.com" target="_blank">
+        <span>💌</span><span>Commission Info</span>
+      </a>
+    </section>
+
+    <div class="gif-row">
+      <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif" alt="Cute gif 1">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWQ1aWVteW9jZzV0ZjJxN3A2dXBvOW9tM2RoNDJjNnV4cnY0cnB2NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Cute gif 2">
+      <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cute gif 3">
+    </div>
+
+    <div class="footer">made with love, ribbon.css, and sparkles ♡</div>
+    <div class="credit">replace the image, gifs, and links with your own favorites</div>
+  </main>
+</body>
+</html>
